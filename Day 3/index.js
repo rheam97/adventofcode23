@@ -49,7 +49,7 @@ function solution(){
 
             //check top
             
-            console.log(row, col)
+        
             if(row !== 0 && pattern.test(matrix[row-1][col])){
                 return true
             }
@@ -104,7 +104,7 @@ function solution(){
             if(!isNaN(matrix[r][c])){
                 num.push(matrix[r][c])
                 pos.push([r,c])
-                console.log(num)
+              
             }
           
 
