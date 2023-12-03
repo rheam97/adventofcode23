@@ -10,6 +10,7 @@ function solution(){
      
     // Driver code
     let data = readFileLines('input.txt');
+   
     let results = 0
   
     for(let i=0; i<data.length; i++){
