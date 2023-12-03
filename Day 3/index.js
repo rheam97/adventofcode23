@@ -37,17 +37,19 @@ function solution(){
         matrix.push(el)
     }
 
+  
     //validate digits found
     function validate(arr){
 
         for(let i=0; i<arr.length; i++){
             let row = arr[i][0]
-            let col = arr[j][1]
+            let col = arr[i][1]
 
             let pattern = /[!@#$%^&*()_+={}\[\]:;<>,?~`\\|/"'`-]/
 
             //check top
-
+            if(row !== undefined && col !== undefined){
+                
             if(matrix[row-1][col] !== undefined && pattern.test(matrix[row-1][col])){
                 return true
             }
@@ -87,23 +89,22 @@ function solution(){
                 return true
             }
         }
+        }
 
         return false
     }
 
+    let num = []
+    let pos = []
 
     //iterate over matrix
     for(let r=0; r<matrix.length; r++){
 
         for(let c=0; c<matrix[0].length; c++){
-
-            let num = []
-            let pos = []
-  
             if(!isNaN(matrix[r][c])){
-            
                 num.push(matrix[r][c])
                 pos.push([r,c])
+                console.log(num)
             }
           
 
@@ -118,15 +119,18 @@ function solution(){
                     }
 
                 }
+                else {
 
-                num= []
-                pos = []
+                    num= []
+                    pos = []
+
+                }
             }
             
     }
 }
 
-    return 
+    return result
    
 }
 console.log(solution())
