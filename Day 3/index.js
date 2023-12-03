@@ -48,47 +48,47 @@ function solution(){
             let pattern = /[!@#$%^&*()_+={}\[\]:;<>,?~`\\|/"'`-]/
 
             //check top
-            if(row !== undefined && col !== undefined){
+            
                 
-            if(matrix[row-1][col] !== undefined && pattern.test(matrix[row-1][col])){
+            if(row !== 0 && pattern.test(matrix[row-1][col])){
                 return true
             }
 
             //bottom
-            else if(matrix[row+1][col] !== undefined && pattern.test(matrix[row+1][col])){
+            else if(row !== matrix.length && pattern.test(matrix[row+1][col])){
                 return true
             }
 
             //left 
-            else if(matrix[row][col-1] !== undefined && pattern.test(matrix[row][col-1])){
+            else if(col !== 0 && pattern.test(matrix[row][col-1])){
                 return true
             }
 
             //right
-            else if(matrix[row][col+1] !== undefined && pattern.test(matrix[row][col+1])){
+            else if(col !== matrix[0].length && pattern.test(matrix[row][col+1])){
                 return true
             }
 
             //diagonal top left
-            else if(matrix[row-1][col-1] !== undefined && pattern.test(matrix[row-1][col-1])){
+            else if(row !== 0 && col !==0 && pattern.test(matrix[row-1][col-1])){
                 return true
             }
 
             //diagonal top right
-            else if(matrix[row-1][col+1] !== undefined && pattern.test(matrix[row-1][col+1])){
+            else if(row !== 0 && col !== matrix[0].length && pattern.test(matrix[row-1][col+1])){
                 return true
             }
 
             //diagonal bottom left
-            else if(matrix[row+1][col-1] !== undefined && pattern.test(matrix[row+1][col-1])){
+            else if(row !== matrix.length && col !== 0 && pattern.test(matrix[row+1][col-1])){
                 return true
             }
 
             //diagonal bottom right
-            else if(matrix[row+1][col+1] !== undefined && pattern.test(matrix[row+1][col+1])){
+            else if(row !== matrix.length && col !== matrix[0].length && pattern.test(matrix[row+1][col+1])){
                 return true
             }
-        }
+        
         }
 
         return false
@@ -115,8 +115,15 @@ function solution(){
                  if(validate(pos)){
 
                     result+= parseInt(num.join(''))
-
+                    num= []
+                    pos = []
+                    
                     }
+
+                    num= []
+                    pos = []  
+
+
 
                 }
                 else {
