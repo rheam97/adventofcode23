@@ -49,13 +49,13 @@ function solution(){
 
             //check top
             
-                
+            console.log(row, col)
             if(row !== 0 && pattern.test(matrix[row-1][col])){
                 return true
             }
 
             //bottom
-            else if(row !== matrix.length && pattern.test(matrix[row+1][col])){
+            else if(row < matrix.length-1 && pattern.test(matrix[row+1][col])){
                 return true
             }
 
@@ -80,12 +80,12 @@ function solution(){
             }
 
             //diagonal bottom left
-            else if(row !== matrix.length && col !== 0 && pattern.test(matrix[row+1][col-1])){
+            else if(row < matrix.length-1 && col !== 0 && pattern.test(matrix[row+1][col-1])){
                 return true
             }
 
             //diagonal bottom right
-            else if(row !== matrix.length && col !== matrix[0].length && pattern.test(matrix[row+1][col+1])){
+            else if(row < matrix.length-1 && col !== matrix[0].length && pattern.test(matrix[row+1][col+1])){
                 return true
             }
         
@@ -117,7 +117,7 @@ function solution(){
                     result+= parseInt(num.join(''))
                     num= []
                     pos = []
-                    
+
                     }
 
                     num= []
@@ -128,8 +128,8 @@ function solution(){
                 }
                 else {
 
-                    num= []
-                    pos = []
+                num= []
+                pos = []
 
                 }
             }
